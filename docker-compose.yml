@@ -1,0 +1,12 @@
+version: "3"
+services:
+  ircd:
+    restart: always
+    image: ryarnyah/docker-ircd:latest
+    ports:
+      - 6667:6667
+  matterbridge:
+    restart: always
+    image: ryarnyah/docker-matterbridge:latest
+    volumes:
+      - ".:/etc/matterbridge:ro"
